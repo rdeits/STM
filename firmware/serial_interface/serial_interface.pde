@@ -29,14 +29,14 @@ void setup() {
 
 }
 
-char buffer[11];
+char buffer[15];
 String input_string;
 int settling_delay_us;
 
 void loop() {
   int bytes_read;
   if (Serial.available()) {
-    bytes_read = Serial.readBytesUntil(';', buffer, 11);
+    bytes_read = Serial.readBytesUntil(';', buffer, 15);
     if (bytes_read > 0) {
       input_string = String(buffer);
       input_string = input_string.substring(0, bytes_read); 
